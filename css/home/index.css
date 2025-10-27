@@ -1,0 +1,84 @@
+body {
+    background: linear-gradient(180deg, #0f1724, #071026);
+}
+  
+  /* Textos e efeitos */
+h1, h2, h3, .navbar-brand {
+    letter-spacing: 0.4px;
+}
+  
+a.btn, button.btn {
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+  
+a.btn:hover, button.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+    transform: translateY(-2px);
+}
+
+p { line-height: 1.6; }
+
+.text-light-secondary {
+    color: #d1d5db; /* Cinza claro, tipo #d1d5db ou #e0e0e0 */
+  }
+  
+
+  
+  /* Ajustes visuais */
+.card {
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+  
+  /* Background levemente translúcido para seções */
+.bg-dark.bg-opacity-50 {
+    backdrop-filter: blur(6px);
+}
+  
+/* Foco acessível */
+:focus-visible {
+    outline: 3px solid rgba(79,70,229,0.4);
+    outline-offset: 2px;
+}
+
+/* Badge de habilidades */
+.badge {
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Navbar translucida */
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar nos elementos acima */
+    z-index: 0;           /* Mantém atrás do conteúdo */
+    filter: blur(1px);    /* Suaviza partículas */
+}
+
+
+/* Responsividade extra */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+}
