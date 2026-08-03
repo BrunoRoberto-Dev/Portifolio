@@ -1,168 +1,265 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfólio — Seu Nome</title>
-  <meta name="description" content="Portfólio de Seu Nome — desenvolvedor web e criador de soluções digitais." />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/home/index.css">
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a12">
+  <meta name="color-scheme" content="dark">
+  <title>Bruno Roberto — Desenvolvedor Full Stack</title>
+  <meta name="description" content="Portfólio de Bruno Roberto, desenvolvedor full stack com experiência em Laravel, JavaScript e produtos digitais para serviços públicos.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="./css/home/index.css?v=6">
 </head>
 
-<body class="bg-dark text-light">
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-    <!-- Skip link -->
-    <a href="#main" class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary">Pular para conteúdo</a>
+  <header class="site-header" data-site-header>
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Bruno Roberto — início">
+        <span class="brand-mark" aria-hidden="true">BR</span>
+        <span class="brand-copy">
+          <strong>Bruno Roberto</strong>
+          <small>Full Stack Developer</small>
+        </span>
+      </a>
 
-    <!-- Header -->
-    <header class="border-bottom border-secondary bg-dark bg-opacity-75 sticky-top">
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-dark container py-3">
-                    <a class="navbar-brand fw-bold" href="index.html">Bruno Roberto</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navMenu">
-                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-    </header>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
 
-    <!-- Main -->
-    <main id="main">
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a class="nav-cta" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Hero -->
-        <section class="py-5 text-center">
-            <div class="container">
-                <h1 class="display-5 fw-bold">Olá, eu sou <span class="text-primary">Bruno Roberto</span></h1>
-                <p class="lead text-light-secondary mb-4">Desenvolvedor web focado em criar interfaces limpas e modernas.</p>
-                <div>
-                    <a href="#projetos" class="btn btn-primary me-2">Ver projetos</a>
-                    <a href="#contato" class="btn btn-outline-light">Contato</a>
-                </div>
-            </div>
-        </section>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-hero-item>
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Desenvolvedor Full Stack · Laravel &amp; JavaScript
+          </p>
 
-        <!-- Sobre -->
-        <section id="sobre" class="py-5 bg-dark bg-opacity-75">
-            <div class="container">
-                <div class="row align-items-center g-4">
-                    <div class="col-md-4 text-center">
-                        <img src="./assets/foto.png" class="rounded-circle img-fluid border border-secondary" alt="Foto do desenvolvedor" width="370" height="180">
-                    </div>
-                    <div class="col-md-8">
-                        <h2 class="h4 mb-3">Sobre mim</h2>
-                        <p class="text-light-secondary">Sou um desenvolvedor apaixonado por tecnologia e pela criação de soluções digitais que impactam positivamente o dia a dia das pessoas. Tenho 23 anos e estou finalizando minha graduação em Ciência da Computação. Atuo profissionalmente na área há cerca de 1 ano e 6 meses, com experiência em projetos reais desenvolvidos para a Prefeitura de Peruíbe, que hoje estão em produção e acessíveis ao público.
+          <h1 id="hero-title" data-hero-item>
+            Produtos digitais que tornam o
+            <span class="gradient-text">complexo mais simples.</span>
+          </h1>
 
-                            Trabalho com front-end e back-end, sempre buscando unir uma boa experiência visual a um código limpo, eficiente e de fácil manutenção. Acredito que a tecnologia é uma ferramenta poderosa para transformar ideias em resultados concretos, e é isso que me motiva a continuar evoluindo como desenvolvedor.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <p class="hero-lead" data-hero-item>
+            Crio interfaces claras e aplicações confiáveis, unindo front-end e back-end para transformar necessidades reais em experiências que funcionam.
+          </p>
 
-        <!-- Projetos -->
-        <section id="projetos" class="py-5 ">
-            <div class="container">
-                <h2 class="h4 text-center mb-4">Projetos</h2>
-                <div class="row g-4">
-                    <!-- Card do projeto Cultura -->
-                    <div class="col-md-4">
-                        <article class="card bg-dark border-secondary h-100 shadow-sm">
-                            <img src="./assets/projeto_cultura.png" class="card-img-top" alt="Captura de tela do Projeto 1">
-                            <div class="card-body">
-                                <h3 class="h5 card-title text-white">Portal da Cultura – Prefeitura de Peruíbe</h3>
-                                <p class="text-light-secondary">Desenvolvimento do Portal da Cultura de Peruíbe, para gestão de notícias e eventos culturais.</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-top border-secondary d-flex justify-content-between">
-                                <a href="./views/projects/cultura.html" class="btn btn-sm btn-primary">Ler Mais</a>
-                                
-                            </div>
-                        </article>
-                    </div>
+          <div class="hero-actions" data-hero-item>
+            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="mailto:brunooroberto.oficial@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+          </div>
 
-                    <!-- Card do projeto Carta de Servico -->
-                    <div class="col-md-4">
-                        <article class="card bg-dark border-secondary h-100 shadow-sm">
-                            <img src="./assets/projeto_carta_servico.png" class="card-img-top" alt="Captura de tela do Projeto 1">
-                            <div class="card-body">
-                                <h3 class="h5 card-title text-white">Portal de Serviços – Prefeitura de Peruíbe</h3>
-                                <p class="text-light-secondary">Participação no desenvolvimento do Portal de Serviços de Peruíbe, garantindo acesso fácil e moderno às informações públicas.</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-top border-secondary d-flex justify-content-between">
-                                <a href="./views/projects/servicos.html" class="btn btn-sm btn-primary">Ler Mais</a>
-                                
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Habilidades -->
-        <section id="habilidades" class="py-5 bg-dark">
-            <div class="container text-center">
-                <h2 class="h4 mb-4">Habilidades</h2>
-                <ul class="list-inline">
-                    <li class="list-inline-item badge bg-secondary bg-opacity-25 text-light fs-6 p-2 m-1">HTML5</li>
-                    <li class="list-inline-item badge bg-secondary bg-opacity-25 text-light fs-6 p-2 m-1">CSS / Bootstrap</li>
-                    <li class="list-inline-item badge bg-secondary bg-opacity-25 text-light fs-6 p-2 m-1">JavaScript</li>
-                    <li class="list-inline-item badge bg-secondary bg-opacity-25 text-light fs-6 p-2 m-1">PHP / Laravel</li>
-                    <li class="list-inline-item badge bg-secondary bg-opacity-25 text-light fs-6 p-2 m-1">PostgreSQL</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contato -->
-        <section id="contato" class="py-5">
-            <div class="container">
-                <h2 class="h4 text-center mb-4">Entre em contato</h2>
-
-                <form action="https://formsubmit.co/brunooroberto.oficial@gmail.com" method="POST" class="mx-auto" style="max-width:600px">
-                    <input type="hidden" name="access_key" value="70c20c78-d552-44dc-8d72-f7127942b452">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" name="name" id="nome" class="form-control bg-dark text-light border-secondary" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" name="email" id="email" class="form-control bg-dark text-light border-secondary" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea name="message" id="mensagem" rows="5" class="form-control bg-dark text-light border-secondary" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-light-secondary mb-1">Email: <a href="mailto:brunooroberto.oficial@gmail.com" class="text-light text-decoration-none">brunooroberto.oficial@gmail.com</a></p>
-                    <p class="text-light-secondary mb-1">GitHub: <a href="https://github.com/BrunoRoberto-Dev" target="_blank" rel="noopener" class="text-light text-decoration-none">BrunoRoberto-Dev</a></p>
-                    <p class="text-light-secondary">Linkedin: <a href="https://br.linkedin.com/in/brunorobertodev" target="_blank" rel="noopener" class="text-light text-decoration-none">brunorobertodev</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="border-top border-secondary py-3 bg-dark bg-opacity-75 text-center">
-        <div class="container">
-            <p class="mb-0 text-secondary">&copy; <time datetime="2025">2025</time> Bruno Roberto. Todos os direitos reservados.</p>
+          <div class="hero-links" data-hero-item aria-label="Redes profissionais">
+            <a href="https://github.com/BrunoRoberto-Dev" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://br.linkedin.com/in/brunorobertodev" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-    </footer>
-  
-    <canvas id="particle-canvas"></canvas>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./javascript/particles.js"></script>
+        <div class="hero-visual" data-hero-item aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+          <div class="visual-orbit"></div>
+          <div class="code-card">
+            <div class="code-card-top">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span>bruno.profile</span>
+            </div>
+            <div class="code-lines">
+              <span><i>const</i> foco = <b>"impacto real"</b>;</span>
+              <span><i>stack</i> = [<b>"Laravel"</b>, <b>"JS"</b>];</span>
+              <span><i>status</i> = <b>"em produção"</b>;</span>
+            </div>
+          </div>
+          <div class="floating-chip floating-chip-top"><span></span> Projetos públicos</div>
+          <div class="floating-chip floating-chip-bottom">Front + Back</div>
+        </div>
+      </div>
+
+      <div class="container credibility-row" data-hero-item>
+        <div class="credibility-item"><strong>02</strong><span>plataformas públicas</span></div>
+        <div class="credibility-item"><strong>Full stack</strong><span>da interface à regra de negócio</span></div>
+        <div class="credibility-item"><strong>Produção</strong><span>soluções acessíveis ao público</span></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">01 · Sobre</p>
+          <h2 id="sobre-title">Tecnologia com contexto, clareza e propósito.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="portrait-wrap" data-reveal>
+            <div class="portrait-halo" aria-hidden="true"></div>
+            <img src="./assets/foto.png" width="539" height="567" loading="lazy" alt="Retrato de Bruno Roberto" decoding="async">
+            <div class="portrait-caption">
+              <span class="status-pulse" aria-hidden="true"></span>
+              Experiência em produtos reais
+            </div>
+          </div>
+
+          <div class="about-copy" data-reveal>
+            <p class="about-intro">Sou desenvolvedor full stack e estudante de Ciência da Computação, apaixonado por transformar problemas do dia a dia em soluções digitais úteis.</p>
+            <p>Minha experiência inclui projetos em produção para a Prefeitura de Peruíbe, trabalhando tanto na qualidade da experiência visual quanto em código organizado, seguro e fácil de manter.</p>
+            <p>Gosto de entender o contexto antes de escrever código. É assim que construo produtos mais objetivos, acessíveis e preparados para evoluir.</p>
+
+            <div class="value-grid">
+              <article>
+                <span>01</span>
+                <h3>Visão de produto</h3>
+                <p>Decisões técnicas orientadas pelo uso real.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Código sustentável</h3>
+                <p>Estruturas claras e simples de manter.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Experiência acessível</h3>
+                <p>Interfaces inclusivas em qualquer tela.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-heading section-heading-row" data-reveal>
+          <div>
+            <p class="section-kicker">02 · Trabalho selecionado</p>
+            <h2 id="projetos-title">Projetos que já fazem parte da rotina das pessoas.</h2>
+          </div>
+          <p class="heading-note">Cases de serviço público digital, da interface à aplicação.</p>
+        </div>
+
+        <div class="projects-list">
+          <article class="project-card" data-reveal>
+            <a class="project-image" href="./views/projects/cultura.html" aria-label="Ver case Portal da Cultura">
+              <img src="./assets/projeto_cultura.png" width="1875" height="951" loading="lazy" decoding="async" alt="Tela inicial do Portal da Cultura de Peruíbe">
+              <span class="project-number">01</span>
+              <span class="project-view">Ver case <i aria-hidden="true">↗</i></span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>Portal público</span><span>Em produção</span></div>
+              <h3><a href="./views/projects/cultura.html">Portal da Cultura de Peruíbe</a></h3>
+              <p>Plataforma para notícias, eventos e gestão de conteúdos culturais, conectando a Secretaria de Cultura à comunidade.</p>
+              <ul class="tag-list" aria-label="Tecnologias do projeto">
+                <li>Laravel</li><li>JavaScript</li><li>PostgreSQL</li><li>Bootstrap</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <a class="project-image" href="./views/projects/servicos.html" aria-label="Ver case Portal de Serviços">
+              <img src="./assets/projeto_carta_servico.png" width="1875" height="951" loading="lazy" decoding="async" alt="Tela inicial do Portal de Serviços de Peruíbe">
+              <span class="project-number">02</span>
+              <span class="project-view">Ver case <i aria-hidden="true">↗</i></span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>Governo digital</span><span>Em produção</span></div>
+              <h3><a href="./views/projects/servicos.html">Portal de Serviços de Peruíbe</a></h3>
+              <p>Experiência responsiva para encontrar cartas de serviço, secretarias e informações municipais com clareza e rapidez.</p>
+              <ul class="tag-list" aria-label="Tecnologias do projeto">
+                <li>Laravel</li><li>JavaScript</li><li>Acessibilidade</li><li>PHP</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="habilidades" aria-labelledby="habilidades-title">
+      <div class="container skills-grid">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">03 · Habilidades</p>
+          <h2 id="habilidades-title">Base técnica para construir de ponta a ponta.</h2>
+          <p class="heading-note">Ferramentas escolhidas pelo problema, com atenção especial a qualidade, desempenho e manutenção.</p>
+        </div>
+
+        <div class="skills-stack" data-reveal>
+          <article class="skill-row">
+            <span class="skill-index">01</span>
+            <div><h3>Front-end</h3><p>HTML semântico, CSS, Bootstrap, JavaScript e interfaces responsivas.</p></div>
+            <span class="skill-symbol" aria-hidden="true">↗</span>
+          </article>
+          <article class="skill-row">
+            <span class="skill-index">02</span>
+            <div><h3>Back-end</h3><p>PHP, Laravel, regras de negócio, painéis gerenciais e integrações.</p></div>
+            <span class="skill-symbol" aria-hidden="true">↗</span>
+          </article>
+          <article class="skill-row">
+            <span class="skill-index">03</span>
+            <div><h3>Dados &amp; qualidade</h3><p>PostgreSQL, Git, acessibilidade, desempenho e código sustentável.</p></div>
+            <span class="skill-symbol" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato" aria-labelledby="contato-title">
+      <div class="container contact-shell" data-reveal>
+        <div class="contact-copy">
+          <p class="section-kicker">04 · Contato</p>
+          <h2 id="contato-title">Tem um desafio em mente? Vamos conversar.</h2>
+          <p>Estou sempre aberto a conhecer bons times, projetos interessantes e oportunidades de criar produtos digitais com impacto.</p>
+          <div class="contact-direct">
+            <span>Contato direto</span>
+            <a href="mailto:brunooroberto.oficial@gmail.com">brunooroberto.oficial@gmail.com <i aria-hidden="true">↗</i></a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/brunooroberto.oficial@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Novo contato pelo portfólio">
+          <div class="field-row">
+            <label for="nome">Nome</label>
+            <input id="nome" name="name" type="text" autocomplete="name" placeholder="Como posso te chamar?" required>
+          </div>
+          <div class="field-row">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="seuemail@empresa.com" required>
+          </div>
+          <div class="field-row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="message" rows="4" placeholder="Conte um pouco sobre a oportunidade ou projeto." required></textarea>
+          </div>
+          <button class="button button-primary button-submit" type="submit">Enviar mensagem <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Bruno Roberto</strong>
+        <p>Desenvolvedor Full Stack · Brasil</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/BrunoRoberto-Dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://br.linkedin.com/in/brunorobertodev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#inicio">Voltar ao topo ↑</a>
+      </div>
+      <small>© <span data-current-year>2026</span> Bruno Roberto.</small>
+    </div>
+  </footer>
+
+  <script type="module" src="./javascript/particles.js?v=6"></script>
 </body>
 </html>

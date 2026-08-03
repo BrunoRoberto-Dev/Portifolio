@@ -1,107 +1,159 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portal da Cultura — Detalhes do Projeto</title>
-  <meta name="description" content="Detalhes do projeto Portal da Cultura – Prefeitura de Peruíbe, desenvolvido por Bruno Roberto." />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/home/index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a12">
+  <meta name="color-scheme" content="dark">
+  <title>Portal da Cultura — Case de Bruno Roberto</title>
+  <meta name="description" content="Case do Portal da Cultura de Peruíbe: notícias, eventos e gestão de conteúdo cultural em uma plataforma pública responsiva.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="../../css/home/index.css?v=6">
 </head>
 
-<body class="bg-dark text-light">
+<body class="project-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-    <!-- Skip link -->
-    <a href="#main" class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary">Pular para conteúdo</a>
+  <header class="site-header" data-site-header>
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="Bruno Roberto — página inicial">
+        <span class="brand-mark" aria-hidden="true">BR</span>
+        <span class="brand-copy"><strong>Bruno Roberto</strong><small>Full Stack Developer</small></span>
+      </a>
 
-    <!-- Header -->
-    <header class="border-bottom border-secondary bg-dark bg-opacity-75 sticky-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-dark container py-3">
-                <a class="navbar-brand fw-bold" href="../../index.html">Bruno Roberto</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navMenu">
-                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#sobre">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#projetos">Projetos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#habilidades">Habilidades</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#contato">Contato</a></li>
-                    </ul>
-                </div>
-            </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <a href="../../index.html#sobre">Sobre</a>
+        <a href="../../index.html#projetos">Projetos</a>
+        <a href="../../index.html#habilidades">Habilidades</a>
+        <a class="nav-cta" href="../../index.html#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Navegação estrutural" data-hero-item>
+          <a href="../../index.html">Portfólio</a>
+          <span aria-hidden="true">/</span>
+          <a href="../../index.html#projetos">Projetos</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Cultura</span>
+        </nav>
+
+        <div class="case-intro">
+          <div>
+            <p class="case-eyebrow" data-hero-item>Case 01 · Portal público</p>
+            <h1 id="case-title" data-hero-item>Portal da Cultura de Peruíbe</h1>
+          </div>
+          <div data-hero-item>
+            <p class="case-lead">Uma plataforma para aproximar a comunidade das notícias, eventos e iniciativas culturais da cidade.</p>
+            <div class="case-actions">
+              <a class="button button-primary" href="https://cultura.peruibe.sp.gov.br/" target="_blank" rel="noopener noreferrer">Visitar projeto <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="../../index.html#projetos">Voltar</a>
+            </div>
+          </div>
         </div>
-    </header>
 
-    <main id="main">
-        <!-- Hero do Projeto -->
-        <section class="py-5 text-center">
-            <div class="container">
-                <h1 class="display-5 fw-bold">Portal da Cultura – Prefeitura de Peruíbe</h1>
-                <p class="lead text-light-secondary mb-4">Plataforma para divulgação de notícias, eventos e gerenciamento de conteúdos culturais da cidade.</p>
-                <a href="../../index.html#projetos" class="btn btn-primary">Voltar ao Portfólio</a>
-            </div>
-        </section>
-
-        <!-- Descrição do Projeto -->
-        <section class="py-5 bg-dark bg-opacity-50">
-            <div class="container">
-                <h2 class="h4 mb-3">Descrição do Projeto</h2>
-                <p class="text-light-secondary">O Portal da Cultura foi desenvolvido para aproximar os munícipes das notícias, eventos e iniciativas culturais de Peruíbe. O projeto inclui um sistema interno de gerenciamento de artistas e de conteúdo que permite à equipe da Secretaria de Cultura publicar e organizar informações de forma prática e eficiente.</p>
-                
-                <h3 class="h5 mt-4">Tecnologias Utilizadas</h3>
-                <ul class="text-light-secondary">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Bootstrap 5</li>
-                    <li>JavaScript</li>
-                    <li>PHP</li>
-                    <li>Laravel</li>
-                    <li>PostgreSQL</li>
-                </ul>
-
-                <h3 class="h5 mt-4">Link do projeto</h3>
-                <a href="https://cultura.peruibe.sp.gov.br/" class="text-light-secondary">https://cultura.peruibe.sp.gov.br/</a>
-            </div>
-        </section>
-
-        <!-- Imagens do Projeto -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="h4 mb-4 text-center">Capturas de Tela</h2>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <img src="../../assets/cultura_prints/pagina_eventos.png" class="img-fluid rounded-4 shadow-sm" alt="Tela de eventos do Portal da Cultura">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../../assets/cultura_prints/pagina_noticias.png" class="img-fluid rounded-4 shadow-sm" alt="Tela de eventos do Portal da Cultura">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../../assets/cultura_prints/sistema_eventos.png" class="img-fluid rounded-4 shadow-sm" alt="Tela de eventos do Portal da Cultura">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../../assets/cultura_prints/sistema_tags.png" class="img-fluid rounded-4 shadow-sm" alt="Tela de eventos do Portal da Cultura">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-  <!-- Rodapé -->
-    <footer class="border-top border-secondary py-3 bg-dark bg-opacity-75 text-center">
-        <div class="container">
-            <p class="mb-0 text-light-secondary">&copy; <time datetime="2025">2025</time> Bruno Roberto. Todos os direitos reservados.</p>
+        <div class="case-stats" data-hero-item>
+          <div class="case-stat"><span>Contexto</span><strong>Serviço público</strong></div>
+          <div class="case-stat"><span>Atuação</span><strong>Front-end &amp; back-end</strong></div>
+          <div class="case-stat"><span>Status</span><strong>Em produção</strong></div>
         </div>
-    </footer>
+        <div class="case-cover" data-hero-item>
+          <img src="../../assets/projeto_cultura.png" width="1875" height="951" fetchpriority="high" alt="Página inicial do Portal da Cultura de Peruíbe">
+        </div>
+      </div>
+    </section>
 
-    <canvas id="particle-canvas"></canvas>
+    <section class="section case-details" aria-labelledby="visao-geral-title">
+      <div class="container case-details-grid">
+        <div class="case-copy" data-reveal>
+          <p class="section-kicker">Visão geral</p>
+          <h2 id="visao-geral-title">Conteúdo cultural organizado para ser encontrado com facilidade.</h2>
+          <p>O Portal da Cultura foi desenvolvido para aproximar os munícipes das notícias, eventos e iniciativas culturais de Peruíbe. A experiência concentra informações importantes em uma navegação direta e adaptada a diferentes telas.</p>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../javascript/particles.js"></script>
+          <h3>Gestão de conteúdo</h3>
+          <p>Além da área pública, o projeto inclui um sistema interno para gerenciar artistas, eventos, notícias e tags. Assim, a equipe da Secretaria de Cultura consegue publicar e organizar conteúdo de forma prática.</p>
+
+          <h3>Experiência responsiva</h3>
+          <p>A interface prioriza leitura, hierarquia visual e acesso rápido às informações, mantendo consistência entre computadores e dispositivos móveis.</p>
+        </div>
+
+        <aside class="case-aside" data-reveal aria-label="Contribuições e tecnologias">
+          <h3>Principais entregas</h3>
+          <ul>
+            <li>Interface pública responsiva</li>
+            <li>Estrutura de notícias e eventos</li>
+            <li>Painel de gerenciamento interno</li>
+            <li>Organização por artistas e tags</li>
+          </ul>
+          <ul class="tag-list" aria-label="Tecnologias utilizadas">
+            <li>HTML5</li><li>CSS3</li><li>Bootstrap 5</li><li>JavaScript</li><li>PHP</li><li>Laravel</li><li>PostgreSQL</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section gallery-section" aria-labelledby="galeria-title">
+      <div class="container">
+        <div class="gallery-heading" data-reveal>
+          <div>
+            <p class="section-kicker">Interface</p>
+            <h2 id="galeria-title">Uma experiência pública e um sistema de gestão.</h2>
+          </div>
+          <p>Capturas reais das áreas públicas e administrativas do projeto.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item" data-reveal>
+            <img src="../../assets/cultura_prints/pagina_eventos.png" width="1910" height="903" loading="lazy" decoding="async" alt="Página de eventos do Portal da Cultura">
+            <figcaption>Agenda e descoberta de eventos culturais</figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="../../assets/cultura_prints/pagina_noticias.png" width="1910" height="903" loading="lazy" decoding="async" alt="Página de notícias do Portal da Cultura">
+            <figcaption>Notícias e comunicação com a comunidade</figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="../../assets/cultura_prints/sistema_eventos.png" width="1910" height="903" loading="lazy" decoding="async" alt="Gerenciamento de eventos no sistema interno">
+            <figcaption>Painel interno de gestão de eventos</figcaption>
+          </figure>
+          <figure class="gallery-item" data-reveal>
+            <img src="../../assets/cultura_prints/sistema_tags.png" width="1910" height="903" loading="lazy" decoding="async" alt="Gerenciamento de tags no sistema interno">
+            <figcaption>Organização e gerenciamento de tags</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container next-case" data-reveal>
+        <div>
+          <p class="section-kicker">Próximo projeto</p>
+          <h2>Portal de Serviços de Peruíbe</h2>
+        </div>
+        <a class="button button-primary" href="./servicos.html">Ver próximo case <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Bruno Roberto</strong><p>Desenvolvedor Full Stack · Brasil</p></div>
+      <div class="footer-links">
+        <a href="https://github.com/BrunoRoberto-Dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://br.linkedin.com/in/brunorobertodev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#conteudo">Voltar ao topo ↑</a>
+      </div>
+      <small>© <span data-current-year>2026</span> Bruno Roberto.</small>
+    </div>
+  </footer>
+
+  <script type="module" src="../../javascript/particles.js?v=6"></script>
 </body>
 </html>
