@@ -53,6 +53,171 @@ window.addEventListener(
 
 updateScrollUi();
 
+const initProjectLightbox = () => {
+  const projectImages = Array.from(
+    document.querySelectorAll(".case-cover img, .gallery-grid .gallery-item img")
+  );
+
+  if (!projectImages.length) return;
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "project-lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Visualizador de imagens do projeto");
+  lightbox.innerHTML = `
+    <button class="project-lightbox__control project-lightbox__close" type="button" aria-label="Fechar visualizador">×</button>
+    <button class="project-lightbox__control project-lightbox__previous" type="button" aria-label="Imagem anterior" aria-controls="project-lightbox-image">←</button>
+    <div class="project-lightbox__stage">
+      <img id="project-lightbox-image" class="project-lightbox__image" alt="">
+    </div>
+    <button class="project-lightbox__control project-lightbox__next" type="button" aria-label="Próxima imagem" aria-controls="project-lightbox-image">→</button>
+    <div class="project-lightbox__meta">
+      <p class="project-lightbox__caption"></p>
+      <span class="project-lightbox__counter" aria-live="polite"></span>
+    </div>
+  `;
+  document.body.append(lightbox);
+
+  const displayedImage = lightbox.querySelector(".project-lightbox__image");
+  const stage = lightbox.querySelector(".project-lightbox__stage");
+  const caption = lightbox.querySelector(".project-lightbox__caption");
+  const counter = lightbox.querySelector(".project-lightbox__counter");
+  const closeButton = lightbox.querySelector(".project-lightbox__close");
+  const previousButton = lightbox.querySelector(".project-lightbox__previous");
+  const nextButton = lightbox.querySelector(".project-lightbox__next");
+  const controls = [closeButton, previousButton, nextButton];
+  let currentIndex = 0;
+  let lastFocusedElement = null;
+  let closeTimer = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  const imageCaption = (image, index) =>
+    image.closest("figure")?.querySelector("figcaption")?.textContent?.trim() ||
+    image.alt ||
+    `Imagem ${index + 1} do projeto`;
+
+  const preloadAdjacentImages = () => {
+    const adjacentIndexes = [
+      (currentIndex - 1 + projectImages.length) % projectImages.length,
+      (currentIndex + 1) % projectImages.length,
+    ];
+
+    adjacentIndexes.forEach((index) => {
+      const preload = new Image();
+      preload.src = projectImages[index].currentSrc || projectImages[index].src;
+    });
+  };
+
+  const showImage = (index) => {
+    currentIndex = (index + projectImages.length) % projectImages.length;
+    const selectedImage = projectImages[currentIndex];
+    displayedImage.src = selectedImage.currentSrc || selectedImage.src;
+    displayedImage.alt = selectedImage.alt;
+    caption.textContent = imageCaption(selectedImage, currentIndex);
+    counter.textContent = `${currentIndex + 1} / ${projectImages.length}`;
+    preloadAdjacentImages();
+  };
+
+  const openLightbox = (index) => {
+    window.clearTimeout(closeTimer);
+    lastFocusedElement = document.activeElement;
+    showImage(index);
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    window.requestAnimationFrame(() => lightbox.classList.add("is-open"));
+    closeButton.focus({ preventScroll: true });
+  };
+
+  const closeLightbox = () => {
+    if (lightbox.hidden) return;
+    lightbox.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+    closeTimer = window.setTimeout(
+      () => {
+        lightbox.hidden = true;
+        displayedImage.removeAttribute("src");
+        lastFocusedElement?.focus({ preventScroll: true });
+      },
+      reduceMotion ? 0 : 220
+    );
+  };
+
+  projectImages.forEach((image, index) => {
+    const label = imageCaption(image, index);
+    image.tabIndex = 0;
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-haspopup", "dialog");
+    image.setAttribute("aria-label", `Ampliar: ${label}`);
+
+    image.addEventListener("click", () => openLightbox(index));
+    image.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  previousButton.addEventListener("click", () => showImage(currentIndex - 1));
+  nextButton.addEventListener("click", () => showImage(currentIndex + 1));
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  stage.addEventListener(
+    "touchstart",
+    (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  stage.addEventListener(
+    "touchend",
+    (event) => {
+      const distanceX = event.changedTouches[0].clientX - touchStartX;
+      const distanceY = event.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(distanceX) < 45 || Math.abs(distanceX) <= Math.abs(distanceY)) return;
+      showImage(distanceX > 0 ? currentIndex - 1 : currentIndex + 1);
+    },
+    { passive: true }
+  );
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+
+    if (event.key === "Escape") {
+      closeLightbox();
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      showImage(currentIndex - 1);
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      showImage(currentIndex + 1);
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+    const focusedIndex = controls.indexOf(document.activeElement);
+    const nextFocusIndex = event.shiftKey
+      ? (focusedIndex - 1 + controls.length) % controls.length
+      : (focusedIndex + 1) % controls.length;
+    event.preventDefault();
+    controls[nextFocusIndex].focus();
+  });
+};
+
+initProjectLightbox();
+
 const initMotion = async () => {
   if (reduceMotion) return;
 
