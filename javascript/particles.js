@@ -221,51 +221,14 @@ initProjectLightbox();
 const initMotion = async () => {
   if (reduceMotion) return;
 
-  try {
-    const { animate, inView, stagger } = await import(
-      "https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm"
-    );
-
-    const heroItems = document.querySelectorAll("[data-hero-item]");
-    if (heroItems.length) {
-      heroItems.forEach((item) => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(22px)";
-      });
-
-      animate(
-        heroItems,
-        { opacity: [0, 1], y: [22, 0] },
-        {
-          duration: 0.72,
-          delay: stagger(0.075),
-          ease: [0.22, 1, 0.36, 1],
-        }
-      );
-    }
-
-    document.querySelectorAll("[data-reveal]").forEach((element) => {
-      element.style.opacity = "0";
-      element.style.transform = "translateY(30px)";
+  document.querySelectorAll("[data-hero-item]").forEach((element, index) => {
+    element.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 380,
+      delay: index * 45,
+      easing: "ease-out",
+      fill: "both",
     });
-
-    inView(
-      "[data-reveal]",
-      (element) => {
-        animate(
-          element,
-          { opacity: [0, 1], y: [30, 0] },
-          { duration: 0.72, ease: [0.22, 1, 0.36, 1] }
-        );
-      },
-      { amount: 0.14, margin: "0px 0px -8% 0px" }
-    );
-  } catch (error) {
-    document.querySelectorAll("[data-hero-item], [data-reveal]").forEach((element) => {
-      element.style.removeProperty("opacity");
-      element.style.removeProperty("transform");
-    });
-  }
+  });
 };
 
 const initThreeScene = async () => {
